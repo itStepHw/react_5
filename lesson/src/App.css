@@ -1,0 +1,135 @@
+html{
+    background-color: #f3f3f3;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+.header{
+    width: 100%;
+    height: 70px;
+    padding: 10px 20px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .logo{
+        font-size: 23px;
+        color: darkgreen;
+        font-weight: bold;
+        font-family: Calibri, serif;
+    }
+}
+
+.button-block{
+    width: 100%;
+    height: 70px;
+    background-color: #2d2d2d;
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    .button{
+        color: white;
+        font-size: 20px;
+        font-family: Calibri, serif;
+        background-color: #2d2d2d;
+        outline: none;
+        border: none;
+    }
+    .button:hover{
+        background-color: #545454;
+    }
+}
+
+.main_block{
+    margin: 0 30px 0 30px;
+}
+
+/*Таблица - начало*/
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+/*Таблица - конец*/
+
+.books{
+    margin-top: 20px;
+}
+
+.add_button{
+    outline: none;
+    border: none;
+    background-color: #404040;
+    color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+.add_button:active{
+    background-color: #787878;
+}
+.control_buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 20px;
+
+    .search_input{
+        height: 66%;
+        padding-left: 10px;
+    }
+}
+
+/*Модальное окно - начало*/
+.modal{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+.black{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    opacity: 0.3;
+    z-index: 1;
+}
+.modal_content{
+    background-color: white;
+    z-index: 2;
+    position: relative;
+    height: max-content;
+    width: max-content;
+    text-align: center;
+    padding: 20px;
+}
+.active .modal {
+    display: flex;
+}
+body.active{
+    overflow: hidden;
+}
+/*Модальное окно - конец*/

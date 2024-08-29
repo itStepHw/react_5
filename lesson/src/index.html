@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .block{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation: block_anim;
+            animation-iteration-count: infinite;
+            position: absolute;
+            animation-duration: 2s;
+
+
+        }
+        
+        @keyframes block_anim {
+            0%{
+                left: 0;
+            }
+            50%{
+                left: 50%;
+            }
+            100%{
+                left: 0;
+            }
+        }
+        
+        .block:hover{
+            background-color: blue;
+
+        }
+
+        button{
+            margin-top: 200px;
+        }
+    </style>
+
+    <div class="block">
+
+    </div>
+
+    <button id="btn">Кнопка</button>
+
+    <span id="text">
+
+    </span>
+
+    <script>
+        function myLog(text){
+            console.log(text)
+        }
+
+        function macro(text){
+            setTimeout(() => myLog(text))
+        }
+
+        function startMicro(text){
+            queueMicrotask(() => myLog(text))
+        }
+
+
+        function partTask(start, end){
+            for(let start; start < end; start++){
+
+            }
+        }
+
+
+
+
+        const clickHendler = () => {
+            console.log('asdasd')
+            for(let i = 0; i < 10; i++){
+                myLog('text' + i)
+                macro('macro ' + i)
+                startMicro('что то ' + i)
+                Promise.resolve("micro text " + i).then(e=>myLog(e))
+
+                document.getElementById("text").innerText = Math.random()
+            }
+
+
+        }
+
+
+        button = document.getElementById('btn')
+
+        button.addEventListener('click', clickHendler)
+
+
+
+    </script>
+
+</body>
+</html>
